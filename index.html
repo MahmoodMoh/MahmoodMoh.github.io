@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahmood Mohmammadi – Edge AI & Embedded Systems</title>
+  
+  <style>
+    :root {
+        --bg: #0f172a;
+        --card: #1e293b;
+        --accent: #38bdf8;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        margin: 0;
+        font-family: "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+    }
+    
+    header {
+        padding: 4rem 2rem;
+        text-align: center;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+        margin: 0;
+    }
+    
+    header p {
+        color: var(--muted);
+        margin-top: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    header a {
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 0.6rem 1.2rem;
+        background: var(--accent);
+        color: #0f172a;
+        font-weight: bold;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    
+    header a:hover {
+        opacity: 0.8;
+    }
+    
+    section {
+        max-width: 1100px;
+        margin: auto;
+        padding: 3rem 2rem;
+    }
+    
+    h2 {
+        border-bottom: 2px solid var(--accent);
+        display: inline-block;
+        padding-bottom: 0.3rem;
+    }
+    
+    .grid {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        margin-top: 2rem;
+    }
+    
+    .card {
+        background: var(--card);
+        padding: 1.5rem;
+        border-radius: 10px;
+        transition: 0.3s;
+
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card .toggle {
+        margin-top: auto;
+        align-self: flex-start;  
+    }
+
+    .card .hidden,
+    .card .details {
+        margin-top: 1rem;
+    }
+    
+    .card:hover {
+        transform: translateY(-4px);
+    }
+    
+    .card h3 {
+        margin-top: 0;
+        color: var(--accent);
+    }
+    
+    .card p {
+        color: var(--muted);
+    }
+    
+    .card a {
+        display: inline-block;
+        margin-top: 0.7rem;
+        color: var(--accent);
+        font-weight: bold;
+        text-decoration: none;
+    }
+    
+    .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        margin-top: 1.5rem;
+    }
+    
+    .skill {
+        background: var(--card);
+        padding: 0.5rem 0.9rem;
+        border-radius: 6px;
+        font-size: 0.9rem;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 2rem;
+        background: #0b1220;
+        color: var(--muted);
+    }
+    
+    button.toggle {
+        margin-top: 1rem;
+        background: none;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .hidden {
+        display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Mahmood Mohmammadi</h1>
+    <p>
+        Edge AI & Embedded Systems Engineer  
+        Smart Automation • On-Prem ML • Industrial Electronics
+    </p>
+    <a href="https://github.com/" target="_blank">View GitHub</a>
+</header>
+
+<section>
+    <h2>System Engineering Focus</h2>
+    <p>
+        I design and deploy local AI systems integrated with embedded hardware and automation infrastructure.
+        My focus is on on-prem inference, constrained hardware optimization, and practical system integration
+        without relying on external cloud services.
+    </p>
+
+    <div class="skills">
+        <div class="skill">Embedded C / C++</div>
+        <div class="skill">Python</div>
+        <div class="skill">Docker</div>
+        <div class="skill">MQTT</div>
+        <div class="skill">LLM Deployment</div>
+        <div class="skill">Quantization</div>
+        <div class="skill">Edge Inference</div>
+        <div class="skill">Linux (Debian)</div>
+        <div class="skill">IoT Integration</div>
+        <div class="skill">System Architecture</div>
+    </div>
+</section>
+
+<section>
+  <h2>Selected Projects</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Edge Automation Infrastructure</h3>
+      <p>
+      ESP32-to-Cloud architecture using MQTT over TLS, 
+      Dockerized gateway services, and reliable data handling for secure IoT automation.
+      </p>
+      <button class="toggle" onclick="toggle(this)">Details</button>
+      <div class="hidden">
+        <p>
+        • MQTT v3.1.1 over TLS 1.2 communication<br> 
+          • Custom PKI with self‑signed Root CA<br> 
+          • Offline data buffering and cloud sync<br> 
+          • Dockerized gateway: Mosquitto, Python logic, OTA server
+        </p>
+        <a href="https://github.com/" target="_blank">View Repository</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>Discrete 2-Bit Microcontroller (TTL Logic)</h3>
+      <p>
+      The work includes ALU design, SRAM implementation, opcode handling, timing logic, and full breadboard assembly.
+      </p>
+      <button class="toggle" onclick="toggle(this)">Details</button>
+      <div class="hidden">
+        <p>
+        - Modular CPU architecture<br>
+        - Custom 2-bit ALU<br>
+        - Discrete SRAM implementation<br>
+        - Data registers implementation<br>
+        - Opcode decoding and execution control<br>
+        - Clock generation using NE555<br>
+        - Real hardware debugging on breadboards<br>
+        </p>
+        <a href="https://github.com/" target="_blank">View Repository</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Smart Greenhouse – Master/Slave MCU System</h3>
+      <p>
+        Embedded greenhouse control system built on a two‑node architecture:
+        Master (Arduino Uno) and Slave (ATmega328PB). Implements SPI communication,
+        sensor fusion with EMA filtering, actuator control, LCD interface, and
+        low‑power operation with sleep modes.
+      </p>
+      <button class="toggle" onclick="toggle(this)">Details</button>
+      <div class="hidden">
+        <p>
+          • SPI master–slave protocol with 8 command types<br>
+          • EMA‑filtered temperature, humidity, and soil moisture<br>
+          • Deep‑sleep slave node with interrupt wake‑up<br>
+          • LCD (I2C) interface and UART JSON output<br>
+          • Servo‑controlled ventilation, pump & fan automation<br>
+          • Structured SensorData package with checksum
+        </p>
+        <a href="https://github.com/" target="_blank">View Repository</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>Local Multi-Model LLM Server</h3>
+      <p>
+      Self-hosted LLM system with dynamic model selection (1B, Mistral 7B, Qwen 7B 4Q).
+      Implements conversation branching, summarization storage, SQLite backend, and
+      TTS response generation. Designed for CPU-based inference and limited hardware.
+      </p>
+      <button class="toggle" onclick="toggle(this)">Details</button>
+      <div class="hidden">
+        <p>
+        • Quantized models for constrained RAM<br>
+        • Branch-based memory architecture<br>
+        • Modular backend separation<br>
+        • Fully local deployment (no cloud)
+        </p>
+        <!--a href="#">View Repository</a-->
+      </div>
+    </div>
+    
+  
+    
+    </div>
+  
+  </div>
+</section>
+
+<section>
+  <h2>Engineering Approach</h2>
+  <p>
+  I prioritize system reliability, hardware constraints, and long-term maintainability.
+  Instead of relying on managed cloud APIs, I focus on understanding model behavior,
+  resource usage, and integration boundaries within embedded and automation environments.
+  </p>
+</section>
+
+<footer>
+    © 2026 Ivan Shuba • Designed for technical clarity, not decoration.
+</footer>
+
+<script>
+function toggle(btn) {
+    const content = btn.nextElementSibling;
+    content.classList.toggle("hidden");
+}
+</script>
+
+</body>
+</html>

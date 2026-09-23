@@ -1,303 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahmood Mohmammadi – Edge AI & Embedded Systems</title>
-  
-  <style>
-    :root {
-        --bg: #0f172a;
-        --card: #1e293b;
-        --accent: #38bdf8;
-        --text: #e2e8f0;
-        --muted: #94a3b8;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmood Mohammadi - Edge AI & Embedded Systems Engineer</title>
+    <meta name="description" content="Portfolio of Mahmood Mohammadi, Edge AI & Embedded Systems Engineer specializing in on-prem ML, constrained hardware optimization, and industrial electronics.">
     
-    * {
-        box-sizing: border-box;
-    }
-    
-    body {
-        margin: 0;
-        font-family: "Segoe UI", Roboto, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-    }
-    
-    header {
-        padding: 4rem 2rem;
-        text-align: center;
-        background: linear-gradient(135deg, #0f172a, #1e293b);
-    }
-    
-    header h1 {
-        font-size: 2.5rem;
-        margin: 0;
-    }
-    
-    header p {
-        color: var(--muted);
-        margin-top: 1rem;
-        font-size: 1.1rem;
-    }
-    
-    header a {
-        display: inline-block;
-        margin-top: 1.5rem;
-        padding: 0.6rem 1.2rem;
-        background: var(--accent);
-        color: #0f172a;
-        font-weight: bold;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-    
-    header a:hover {
-        opacity: 0.8;
-    }
-    
-    section {
-        max-width: 1100px;
-        margin: auto;
-        padding: 3rem 2rem;
-    }
-    
-    h2 {
-        border-bottom: 2px solid var(--accent);
-        display: inline-block;
-        padding-bottom: 0.3rem;
-    }
-    
-    .grid {
-        display: grid;
-        gap: 1.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        margin-top: 2rem;
-    }
-    
-    .card {
-        background: var(--card);
-        padding: 1.5rem;
-        border-radius: 10px;
-        transition: 0.3s;
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --accent-color: #3fb950; /* Muted terminal green */
+            --border-color: #30363d;
+            --card-bg: #161b22;
+            
+            --font-mono: 'Fira Code', 'Consolas', 'Courier New', monospace;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+            
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 4rem;
+        }
 
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .card .toggle {
-        margin-top: auto;
-        align-self: flex-start;  
-    }
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    .card .hidden,
-    .card .details {
-        margin-top: 1rem;
-    }
-    
-    .card:hover {
-        transform: translateY(-4px);
-    }
-    
-    .card h3 {
-        margin-top: 0;
-        color: var(--accent);
-    }
-    
-    .card p {
-        color: var(--muted);
-    }
-    
-    .card a {
-        display: inline-block;
-        margin-top: 0.7rem;
-        color: var(--accent);
-        font-weight: bold;
-        text-decoration: none;
-    }
-    
-    .skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.7rem;
-        margin-top: 1.5rem;
-    }
-    
-    .skill {
-        background: var(--card);
-        padding: 0.5rem 0.9rem;
-        border-radius: 6px;
-        font-size: 0.9rem;
-    }
-    
-    footer {
-        text-align: center;
-        padding: 2rem;
-        background: #0b1220;
-        color: var(--muted);
-    }
-    
-    button.toggle {
-        margin-top: 1rem;
-        background: none;
-        border: 1px solid var(--accent);
-        color: var(--accent);
-        padding: 0.4rem 0.8rem;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    
-    .hidden {
-        display: none;
-    }
-  </style>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            padding: var(--spacing-lg);
+            max-width: 900px;
+            margin: 0 auto;
+            border-left: 2px solid var(--border-color);
+            border-right: 2px solid var(--border-color);
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, .mono-text {
+            font-family: var(--font-mono);
+            font-weight: 500;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, opacity 0.2s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid var(--accent-color);
+            opacity: 0.8;
+        }
+
+        /* Header Section */
+        header {
+            margin-bottom: var(--spacing-xl);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: var(--spacing-lg);
+        }
+
+        .name {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .role {
+            font-size: 1.1rem;
+            color: #8b949e;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .role-highlight {
+            color: var(--text-color);
+        }
+
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 3px;
+        }
+
+        .github-link:hover {
+            background-color: var(--border-color);
+            border-bottom-color: var(--border-color);
+            color: var(--accent-color);
+        }
+
+        /* Focus Section */
+        .focus-section {
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg);
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            font-size: 1.1rem;
+        }
+
+        /* Skills Section */
+        .section-title {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-lg);
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section-title::before {
+            content: "> ";
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .skill-tag {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            padding: 0.3rem 0.6rem;
+            border: 1px solid var(--border-color);
+            background-color: transparent;
+            color: var(--text-color);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .project-card {
+            border: 1px solid var(--border-color);
+            padding: var(--spacing-lg);
+            background-color: var(--card-bg);
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.2s;
+        }
+        
+        .project-card:hover {
+            border-color: var(--accent-color);
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            color: #fff;
+        }
+
+        .project-details {
+            font-size: 0.95rem;
+            color: #8b949e;
+            margin-bottom: var(--spacing-lg);
+            flex-grow: 1;
+        }
+
+        .btn-details {
+            align-self: flex-start;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--bg-color);
+            background-color: var(--accent-color);
+            padding: 0.4rem 1rem;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        .btn-details:hover {
+            opacity: 0.9;
+            border-bottom: none;
+        }
+
+        /* Approach Section */
+        .approach-section {
+            margin-bottom: var(--spacing-xl);
+            padding-top: var(--spacing-lg);
+            border-top: 1px dashed var(--border-color);
+        }
+        
+        .approach-text {
+            font-size: 1rem;
+            color: #8b949e;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #484f58;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: var(--spacing-md);
+                border: none;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
-    <h1>Mahmood Mohmammadi</h1>
-    <p>
-        Edge AI & Embedded Systems Engineer  
-        Smart Automation • On-Prem ML • Industrial Electronics
-    </p>
-    <a href="https://github.com/" target="_blank">View GitHub</a>
-</header>
+    <header>
+        <h1 class="name">Mahmood Mohammadi</h1>
+        <div class="role mono-text">
+            Edge AI & Embedded Systems Engineer <br>
+            <span class="role-highlight">(Smart Automation • On-Prem ML • Industrial Electronics)</span>
+        </div>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="github-link">
+            [ View GitHub ]
+        </a>
+    </header>
 
-<section>
-    <h2>System Engineering Focus</h2>
-    <p>
-        I design and deploy local AI systems integrated with embedded hardware and automation infrastructure.
-        My focus is on on-prem inference, constrained hardware optimization, and practical system integration
-        without relying on external cloud services.
-    </p>
+    <main>
+        <!-- System Engineering Focus -->
+        <section class="focus-section">
+            "I design and deploy local AI systems integrated with embedded hardware and automation infrastructure. My focus is on on-prem inference, constrained hardware optimization, and practical system integration without relying on external cloud services."
+        </section>
 
-    <div class="skills">
-        <div class="skill">Embedded C / C++</div>
-        <div class="skill">Python</div>
-        <div class="skill">Docker</div>
-        <div class="skill">MQTT</div>
-        <div class="skill">LLM Deployment</div>
-        <div class="skill">Quantization</div>
-        <div class="skill">Edge Inference</div>
-        <div class="skill">Linux (Debian)</div>
-        <div class="skill">IoT Integration</div>
-        <div class="skill">System Architecture</div>
-    </div>
-</section>
+        <!-- Skills -->
+        <section>
+            <h2 class="section-title">Technical Inventory</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Embedded C / C++</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">MQTT</span>
+                <span class="skill-tag">LLM Deployment</span>
+                <span class="skill-tag">Quantization</span>
+                <span class="skill-tag">Edge Inference</span>
+                <span class="skill-tag">Linux (Debian)</span>
+                <span class="skill-tag">IoT Integration</span>
+                <span class="skill-tag">System Architecture</span>
+            </div>
+        </section>
 
-<section>
-  <h2>Selected Projects</h2>
+        <!-- Selected Projects -->
+        <section>
+            <h2 class="section-title">Selected Deployments</h2>
+            <div class="projects-grid">
+                
+                <article class="project-card">
+                    <h3 class="project-title">Edge Automation Infrastructure</h3>
+                    <p class="project-details">
+                        ESP32-to-Cloud architecture using MQTT over TLS, Dockerized gateway services, and reliable data handling for secure IoT automation.
+                    </p>
+                    <a href="#" class="btn-details">Details</a>
+                </article>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Edge Automation Infrastructure</h3>
-      <p>
-      ESP32-to-Cloud architecture using MQTT over TLS, 
-      Dockerized gateway services, and reliable data handling for secure IoT automation.
-      </p>
-      <button class="toggle" onclick="toggle(this)">Details</button>
-      <div class="hidden">
-        <p>
-        • MQTT v3.1.1 over TLS 1.2 communication<br> 
-          • Custom PKI with self‑signed Root CA<br> 
-          • Offline data buffering and cloud sync<br> 
-          • Dockerized gateway: Mosquitto, Python logic, OTA server
-        </p>
-        <a href="https://github.com/" target="_blank">View Repository</a>
-      </div>
-    </div>
-    
-    <div class="card">
-      <h3>Discrete 2-Bit Microcontroller (TTL Logic)</h3>
-      <p>
-      The work includes ALU design, SRAM implementation, opcode handling, timing logic, and full breadboard assembly.
-      </p>
-      <button class="toggle" onclick="toggle(this)">Details</button>
-      <div class="hidden">
-        <p>
-        - Modular CPU architecture<br>
-        - Custom 2-bit ALU<br>
-        - Discrete SRAM implementation<br>
-        - Data registers implementation<br>
-        - Opcode decoding and execution control<br>
-        - Clock generation using NE555<br>
-        - Real hardware debugging on breadboards<br>
-        </p>
-        <a href="https://github.com/" target="_blank">View Repository</a>
-      </div>
-    </div>
+                <article class="project-card">
+                    <h3 class="project-title">Discrete 2-Bit Microcontroller (TTL Logic)</h3>
+                    <p class="project-details">
+                        The work includes ALU design, SRAM implementation, opcode handling, timing logic, and full breadboard assembly.
+                    </p>
+                    <a href="#" class="btn-details">Details</a>
+                </article>
 
-    <div class="card">
-      <h3>Smart Greenhouse – Master/Slave MCU System</h3>
-      <p>
-        Embedded greenhouse control system built on a two‑node architecture:
-        Master (Arduino Uno) and Slave (ATmega328PB). Implements SPI communication,
-        sensor fusion with EMA filtering, actuator control, LCD interface, and
-        low‑power operation with sleep modes.
-      </p>
-      <button class="toggle" onclick="toggle(this)">Details</button>
-      <div class="hidden">
-        <p>
-          • SPI master–slave protocol with 8 command types<br>
-          • EMA‑filtered temperature, humidity, and soil moisture<br>
-          • Deep‑sleep slave node with interrupt wake‑up<br>
-          • LCD (I2C) interface and UART JSON output<br>
-          • Servo‑controlled ventilation, pump & fan automation<br>
-          • Structured SensorData package with checksum
-        </p>
-        <a href="https://github.com/" target="_blank">View Repository</a>
-      </div>
-    </div>
-    
-    <div class="card">
-      <h3>Local Multi-Model LLM Server</h3>
-      <p>
-      Self-hosted LLM system with dynamic model selection (1B, Mistral 7B, Qwen 7B 4Q).
-      Implements conversation branching, summarization storage, SQLite backend, and
-      TTS response generation. Designed for CPU-based inference and limited hardware.
-      </p>
-      <button class="toggle" onclick="toggle(this)">Details</button>
-      <div class="hidden">
-        <p>
-        • Quantized models for constrained RAM<br>
-        • Branch-based memory architecture<br>
-        • Modular backend separation<br>
-        • Fully local deployment (no cloud)
-        </p>
-        <!--a href="#">View Repository</a-->
-      </div>
-    </div>
-    
-  
-    
-    </div>
-  
-  </div>
-</section>
+                <article class="project-card">
+                    <h3 class="project-title">Smart Greenhouse – Master/Slave MCU System</h3>
+                    <p class="project-details">
+                        Embedded greenhouse control system built on a two‑node architecture: Master (Arduino Uno) and Slave (ATmega328PB). Implements SPI communication, sensor fusion with EMA filtering, actuator control, LCD interface, and low‑power operation with sleep modes.
+                    </p>
+                    <a href="#" class="btn-details">Details</a>
+                </article>
 
-<section>
-  <h2>Engineering Approach</h2>
-  <p>
-  I prioritize system reliability, hardware constraints, and long-term maintainability.
-  Instead of relying on managed cloud APIs, I focus on understanding model behavior,
-  resource usage, and integration boundaries within embedded and automation environments.
-  </p>
-</section>
+                <article class="project-card">
+                    <h3 class="project-title">Local Multi-Model LLM Server</h3>
+                    <p class="project-details">
+                        Self-hosted LLM system with dynamic model selection (1B, Mistral 7B, Qwen 7B 4Q). Implements conversation branching, summarization storage, SQLite backend, and TTS response generation. Designed for CPU-based inference and limited hardware.
+                    </p>
+                    <a href="#" class="btn-details">Details</a>
+                </article>
 
-<footer>
-    © 2026 Ivan Shuba • Designed for technical clarity, not decoration.
-</footer>
+            </div>
+        </section>
 
-<script>
-function toggle(btn) {
-    const content = btn.nextElementSibling;
-    content.classList.toggle("hidden");
-}
-</script>
+        <!-- Engineering Approach -->
+        <section class="approach-section">
+            <h2 class="section-title">Engineering Approach</h2>
+            <p class="approach-text">
+                "I prioritize system reliability, hardware constraints, and long-term maintainability. Instead of relying on managed cloud APIs, I focus on understanding model behavior, resource usage, and integration boundaries within embedded and automation environments."
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="copyright">&copy; 2026 Mahmood Mohammadi</div>
+        <div class="footer-note">Designed for technical clarity, not decoration.</div>
+    </footer>
 
 </body>
 </html>
